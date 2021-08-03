@@ -1,0 +1,154 @@
+{
+  "pageSizes": [
+    {
+      "label": "100",
+      "value": 100
+    },
+    {
+      "label": "50",
+      "value": 50
+    },
+    {
+      "label": "20",
+      "value": 20
+    },
+    {
+      "label": "10",
+      "value": 10
+    }
+  ],
+  "behaviorTypes": [
+    {
+      "label": "模块",
+      "value": 0,
+      "icon": "modular"
+    },
+    {
+      "label": "页面",
+      "value": 1,
+      "icon": "file"
+    },
+    {
+      "label": "请求",
+      "value": 2,
+      "icon": "link"
+    },
+    {
+      "label": "按钮",
+      "value": 3,
+      "icon": "operation"
+    },
+    {
+      "label": "区域",
+      "value": 4,
+      "icon": "layers"
+    },
+    {
+      "label": "菜单",
+      "value": 5,
+      "icon": "menu"
+    }
+  ],
+  "requestMethods": [
+    {
+      "label": "METHOD",
+      "value": 1,
+      "icon": "modular",
+      "color": "#999"
+    },
+    {
+      "label": "OPTIONS",
+      "value": 2,
+      "icon": "modular",
+      "color": "#0d5aa7"
+    },
+    {
+      "label": "HEAD",
+      "value": 4,
+      "icon": "file",
+      "color": "#9012fe"
+    },
+    {
+      "label": "GET",
+      "value": 8,
+      "icon": "link",
+      "color": "#61affe"
+    },
+    {
+      "label": "POST",
+      "value": 16,
+      "icon": "operation",
+      "color": "#49cc90"
+    },
+    {
+      "label": "PUT",
+      "value": 32,
+      "icon": "file",
+      "color": "#fca130"
+    },
+    {
+      "label": "DELETE",
+      "value": 64,
+      "icon": "link",
+      "color": "#f93e3e"
+    },
+    {
+      "label": "PATCH",
+      "value": 128,
+      "icon": "operation",
+      "color": "#50e3c2"
+    }
+  ],
+  "valueTypes": [
+    {
+      "label": "默认",
+      "value": 0
+    },
+    {
+      "label": "字符串",
+      "value": 1
+    },
+    {
+      "label": "日期",
+      "value": 2
+    },
+    {
+      "label": "集合",
+      "value": 3
+    },
+    {
+      "label": "整数",
+      "value": 4
+    },
+    {
+      "label": "小数",
+      "value": 5
+    }
+  ],
+  "jobStatuss": [
+    {
+      "label": "已停止",
+      "value": 0
+    },
+    {
+      "label": "已开始",
+      "value": 1
+    },
+    {
+      "label": "运行中",
+      "value": 2
+    },
+    {
+      "label": "已暂停",
+      "value": 3
+    },
+    {
+      "label": "已取消",
+      "value": 4
+    },
+    {
+      "label": "已完成",
+      "value": 100
+    }
+  ]
+}

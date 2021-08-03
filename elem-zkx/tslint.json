@@ -1,0 +1,36 @@
+{
+  "defaultSeverity": "warning",
+  "extends": ["tslint:recommended"],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "src/assets/*.json",
+      "src/assets/locations/*.json"
+    ]
+  },
+  "rules": {
+    "semi": [0, "always"],
+    "quotes": [0, "single"],
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "no-empty": false,
+    "radix": false,
+    "no-consecutive-blank-lines": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "quotemark": [true, "single"],
+    "semicolon": [false, "always", "ignore-interfaces"],
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": {
+          "objects": "ignore",
+          "arrays": "ignore",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
+      }
+    ]
+  }
+}

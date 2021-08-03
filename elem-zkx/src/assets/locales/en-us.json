@@ -1,0 +1,9 @@
+{
+  "lang": "language",
+  "logout": "Logout",
+  "title": {
+    "home": "home",
+    "message": "message",
+    "code": "code"
+  }
+}
