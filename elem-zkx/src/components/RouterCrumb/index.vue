@@ -1,6 +1,6 @@
 <template>
   <div class="router-crumb">
-    <el-breadcrumb separator=" >> ">
+    <el-breadcrumb separator-class="el-icon-d-arrow-right">
       <el-breadcrumb-item
         v-for="(item, index) in breadList"
         :key="index"
@@ -49,12 +49,17 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+@import '~@/assets/zks.less';
+
 .router-crumb {
-  .active {
-    color: red;
-  }
-  .activefs {
+  pointer-events: none;
+
+  /deep/.el-breadcrumb__item .el-breadcrumb__inner {
     color: gray;
+  }
+
+  /deep/.el-breadcrumb__item:last-child .el-breadcrumb__inner {
+    color: @menu-active-text-color;
   }
 }
 </style>

@@ -6,6 +6,7 @@
       ref="table"
       size="small"
       v-loading="tableLoading"
+      :header-row-class-name="'cks-table-header'"
       :data="tableData"
       :key="tableKey"
       border

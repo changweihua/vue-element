@@ -16,6 +16,7 @@
               <el-input
                 v-model="tableQuery.keyword"
                 placeholder="关键字"
+                clearable
               ></el-input>
             </el-form-item>
           </el-col>
