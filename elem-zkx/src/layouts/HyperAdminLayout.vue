@@ -2,7 +2,7 @@
   <div class="app-layout" v-wresize="winResize">
     <el-container class="app-main">
       <el-header class="app-header">
-        <el-row>
+        <el-row type="flex">
           <el-col class="app-header-left" :span="8">
             <span class="header-title" :title="`${appShortName}`">
               {{ appName }}
