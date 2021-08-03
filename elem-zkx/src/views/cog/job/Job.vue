@@ -4,6 +4,7 @@
       <el-col :span="24">
         <el-table
           height="100px"
+          :header-row-class-name="'cks-table-header'"
           v-tableHeight="{ bottomOffset: 55 }"
           :data="items"
           border
@@ -77,6 +78,14 @@ export default {
         this.items = [...data['items']]
         // this.tableColumns = [...json['columns']]
         this.tablePager = { ...this.tablePager, total: data['totalCount'] }
+
+        try {
+          const ev = document.createEvent('Event')
+          ev.initEvent('resize', true, true)
+          window.dispatchEvent(ev)
+        } catch (e) {
+          //
+        }
       })
       .catch((err) => {
         console.log(err)

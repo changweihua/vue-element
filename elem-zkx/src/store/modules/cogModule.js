@@ -2,8 +2,8 @@ import { getPagedQuartzJobList } from '@/apis/quartzjob.api'
 
 const cogModule = {
   state: {
-    configurationList: [],
-    pager: {}
+    jobList: [],
+    jobPager: {}
   },
   mutations: {
     setList(state, rows) {

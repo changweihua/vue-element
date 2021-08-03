@@ -9,15 +9,28 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     >
-      <el-row slot="tools" class="btn-wrap">
-        <el-button
-          type="primary"
-          size="small"
-          icon="el-icon-plus"
-          @click="handleCreateClick"
-        >
-          Add
-        </el-button>
+      <el-row :gutter="10" slot="tools" class="btn-wrap">
+        <el-form size="small" :model="tableQuery">
+          <el-col :span="8">
+            <el-form-item>
+              <el-input
+                v-model="tableQuery.keyword"
+                placeholder="关键字"
+              ></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="4">
+            <el-form-item>
+              <el-button
+                icon="el-icon-search"
+                type="primary"
+                @click="handleSearchClick"
+              >
+                查询
+              </el-button>
+            </el-form-item>
+          </el-col>
+        </el-form>
       </el-row>
     </ElexTable>
   </div>
@@ -34,6 +47,9 @@ export default {
   },
   data() {
     return {
+      formInline: {
+        keyword: ''
+      },
       tablePager: {
         page: 1,
         limit: 10,
@@ -41,7 +57,7 @@ export default {
         total: 0
       },
       tableQuery: {
-        roleName: ''
+        keyword: ''
       },
       tableColumns: [
         {
@@ -80,7 +96,10 @@ export default {
             return false
           }
         }
-      ]
+      ],
+      searchModel: {
+        keyword: ''
+      }
     }
   },
   mounted() {
@@ -102,6 +121,7 @@ export default {
   methods: {
     ...mapActions(['fetchList']),
     // GetJobListAsync: CogModule.GetJobListAsync,
+
     handleCreateClick() {
       this.$router.push({
         name: 'roleCreate'

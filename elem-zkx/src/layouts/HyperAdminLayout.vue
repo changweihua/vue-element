@@ -1,5 +1,5 @@
 <template>
-  <div class="app-layout" v-wresize="winResize">
+  <div class="app-layout">
     <el-container class="app-main">
       <el-header class="app-header">
         <el-row type="flex">
@@ -18,7 +18,7 @@
         <el-aside :class="{ asideCollapse: isCollapse }">
           <div class="menu-toggle">
             <i
-              @click="toggleMenuCollapse"
+              @click="toggleCollapsed"
               :class="
                 isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left'
               "
@@ -44,7 +44,7 @@
           <el-main>
             <el-row>
               <el-col :span="24">
-                <RouterCrumb />
+                <RouterCrumb style="padding: 5px 10px;" />
               </el-col>
               <el-col :span="24">
                 <transition
@@ -74,6 +74,7 @@ import Sidebar from '@/components/SideBar/index.vue'
 import { PermissionModule } from '@/store/modules/permission'
 import { AccountModule } from '@/store/modules/account'
 import { asyncRoutes } from '@/router/asyncRouter'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'HyperAdminLayout',
@@ -97,7 +98,6 @@ export default {
       appCopyright: process.env.VUE_APP_COPYRIGHT,
       currentLocale: localStorage.getItem('locale'),
       currentTheme: localStorage.getItem('theme'),
-      isCollapse: false,
       levelList: [],
       sysMenus: asyncRoutes
         .filter((r) => !r.meta.hidden)
@@ -126,12 +126,13 @@ export default {
   computed: {
     userName() {
       return AccountModule.userName
-    }
+    },
+    ...mapState({
+      isCollapse: (state) => state.app.collapsed
+    })
   },
   methods: {
-    toggleMenuCollapse() {
-      this.isCollapse = !this.isCollapse
-    },
+    ...mapActions(['toggleCollapsed']),
     formatMenu(menu) {
       const isBranch =
         menu.children && menu.children.filter((r) => !r.meta.hidden).length > 0
@@ -240,15 +241,7 @@ export default {
 </script>
 
 <style lang="less">
-@header-height: 60px;
-@background-color: #3b5998;
-@header-background-color: #fff;
-@header-shadow-color: #3b5998;
-@header-title-color: #3b5998;
-@aside-background-color: #3b5998;
-@menu-hover-background-color: #2f477a;
-@menu-active-text-color: #26aafe;
-@color: #fff;
+@import '~@/assets/zks.less';
 
 .app-layout {
   height: 100%;
@@ -329,6 +322,14 @@ export default {
   transition: all 0.5s;
 }
 
+.el-container {
+  height: 100%;
+}
+</style>
+
+<style lang="less">
+@import '~@/assets/zks.less';
+
 .el-menu,
 .el-submenu {
   background: @aside-background-color;
@@ -379,15 +380,14 @@ export default {
   // width: 200px;
   min-height: 400px;
 }
+</style>
 
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
+<style lang="less">
+@import '~@/assets/zks.less';
+
+.cks-table-header {
+  th {
+    background: @cks-table-header-background-color;
   }
-}
-
-.el-container {
-  height: 100%;
 }
 </style>

@@ -10,6 +10,8 @@
       :key="tableKey"
       border
       stripe
+      height="100px"
+      v-tableHeight="{ bottomOffset: 55 }"
       highlight-current-row
       @selection-change="tableSelectionChange"
     >
@@ -184,4 +186,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+.pagination-container {
+  margin: 10px 0;
+}
+</style>

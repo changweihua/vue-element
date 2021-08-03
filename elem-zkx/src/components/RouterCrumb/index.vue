@@ -50,7 +50,6 @@ export default {
 </script>
 <style lang="less" scoped>
 .router-crumb {
-  height: 35px;
   .active {
     color: red;
   }

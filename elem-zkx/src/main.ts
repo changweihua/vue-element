@@ -28,6 +28,10 @@ import '@/directives/permissions'
 import '@/directives/outsideclick'
 import '@/directives/watermark'
 
+import { config } from 'vuex-module-decorators'
+// Set rawError to true by default on all @Action decorators
+config.rawError = true
+
 // 这个是你刚刚写的index.js的路径
 import tableHeight from '@/directives/tableHeight'
 // 表格自适应指令

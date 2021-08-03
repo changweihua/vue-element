@@ -29,3 +29,4 @@ declare module 'components' {
 declare module '@/directives/tableHeight'
 
 declare module '@/store/modules/cogModule'
+declare module '@/store/modules/appModule'
