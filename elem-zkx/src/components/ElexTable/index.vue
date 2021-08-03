@@ -4,10 +4,12 @@
     <!--Table-->
     <el-table
       ref="table"
+      size="small"
       v-loading="tableLoading"
       :data="tableData"
       :key="tableKey"
       border
+      stripe
       highlight-current-row
       @selection-change="tableSelectionChange"
     >

@@ -4,19 +4,22 @@
       <el-menu-item
         v-if="!menu.children || menu.children.length == 0"
         :key="menu.name"
-        :index="`${root}/${menu.path}`"
+        :index="`${[root, menu.path].filter((_) => _ !== '').join('/')}`"
       >
         <i class="el-icon-eleme"></i>
         <span slot="title">{{ menu.title }}</span>
       </el-menu-item>
 
-      <el-submenu v-else :index="menu.path" :key="menu.name">
+      <el-submenu v-else :index="`${root}/${menu.path}`" :key="menu.name">
         <template slot="title">
           <!-- <i :class="menu.icon"></i> -->
           <i class="el-icon-eleme"></i>
           <span slot="title">{{ menu.title }}</span>
         </template>
-        <router-menu :root="menu.path" :menus="menu.children" />
+        <router-menu
+          :root="`${[root, menu.path].filter((_) => _ !== '').join('/')}`"
+          :menus="menu.children"
+        />
       </el-submenu>
     </template>
   </fragment>

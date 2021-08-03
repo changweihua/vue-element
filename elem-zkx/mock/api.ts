@@ -4,7 +4,7 @@ export default {
   getJobList: () => {
     const announcements = []
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       const announcement = {
         id: Random.id(), // 身份证号
         announcementId: Random.guid(),

@@ -26,4 +26,6 @@ declare module 'components' {
   export default mde
 }
 
+declare module '@/directives/tableHeight'
+
 declare module '@/store/modules/cogModule'

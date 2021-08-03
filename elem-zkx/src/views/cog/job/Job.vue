@@ -1,29 +1,43 @@
 <template>
-  <div>
-    <el-table :data="items" border style="width: 100%">
-      <!-- <el-table-column prop="userName" label="姓名" width="180"></el-table-column>
+  <div class="container-wrapper">
+    <el-row>
+      <el-col :span="24">
+        <el-table
+          height="100px"
+          v-tableHeight="{ bottomOffset: 55 }"
+          :data="items"
+          border
+          stripe
+          size="small"
+          style="width: 100%"
+        >
+          <!-- <el-table-column prop="userName" label="姓名" width="180"></el-table-column>
     <el-table-column prop="age" label="年龄" width="180"></el-table-column>
     <el-table-column prop="address" label="地址"></el-table-column> -->
-      <el-table-column
-        align="center"
-        v-for="column in tableColumns"
-        :prop="column.prop"
-        :key="column.prop"
-        :label="column.label"
-      >
-        <!-- <template slot-scope="scope">
+          <el-table-column
+            align="center"
+            v-for="column in tableColumns"
+            :prop="column.prop"
+            :key="column.prop"
+            :label="column.label"
+          >
+            <!-- <template slot-scope="scope">
         <span>
           {{ scope.row }}
         </span>
       </template> -->
-      </el-table-column>
-    </el-table>
-    <el-pagination
-      :hide-on-single-page="true"
-      :total="tablePager.total"
-      :current-page="tablePager.current"
-      layout="prev, pager, next"
-    ></el-pagination>
+          </el-table-column>
+        </el-table>
+      </el-col>
+      <el-col :span="24">
+        <el-pagination
+          :hide-on-single-page="true"
+          :total="tablePager.total"
+          :current-page="tablePager.current"
+          layout="prev, pager, next"
+        ></el-pagination>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -51,7 +65,7 @@ export default {
       tablePager: {
         total: 0,
         current: 1,
-        pageSize: this.appPageSize
+        pageSize: 20 //this.appPageSize
       },
       items: []
     }
@@ -73,3 +87,9 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="less">
+// .container-wrapper {
+//   height: calc(100% - 160px);
+// }
+</style>

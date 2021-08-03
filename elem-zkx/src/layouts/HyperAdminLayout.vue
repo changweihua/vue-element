@@ -59,7 +59,7 @@
               </el-col>
             </el-row>
           </el-main>
-          <el-footer class="app-footer">Footer</el-footer>
+          <!-- <el-footer class="app-footer">Footer</el-footer> -->
         </el-container>
       </el-container>
     </el-container>

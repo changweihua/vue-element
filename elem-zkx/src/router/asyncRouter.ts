@@ -1,5 +1,6 @@
 import { RouteConfig } from 'vue-router'
 import HyperAdminLayout from '@/layouts/HyperAdminLayout.vue'
+import Holder from '@/layouts/Holder.vue'
 
 export const asyncRoutes: Array<RouteConfig> = [
   {
@@ -53,8 +54,35 @@ export const asyncRoutes: Array<RouteConfig> = [
           hidden: false,
           code: '0'
         },
-        component: () =>
-          import(/* webpackChunkName: "Job" */ '../views/cog/job/Job2.vue')
+        component: Holder,
+        children: [
+          {
+            path: 'job21',
+            name: 'job21',
+            meta: {
+              title: '任务设置2-1',
+              icon: 'dashboard',
+              svg: true,
+              hidden: false,
+              code: '0'
+            },
+            component: () =>
+              import(/* webpackChunkName: "Job" */ '../views/cog/job/Job2.vue')
+          },
+          {
+            path: 'job22',
+            name: 'job22',
+            meta: {
+              title: '任务设置2-2',
+              icon: 'dashboard',
+              svg: true,
+              hidden: false,
+              code: '0'
+            },
+            component: () =>
+              import(/* webpackChunkName: "Job" */ '../views/cog/job/Job.vue')
+          }
+        ]
       }
     ]
   }

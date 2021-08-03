@@ -28,6 +28,11 @@ import '@/directives/permissions'
 import '@/directives/outsideclick'
 import '@/directives/watermark'
 
+// 这个是你刚刚写的index.js的路径
+import tableHeight from '@/directives/tableHeight'
+// 表格自适应指令
+Vue.use(tableHeight)
+
 import('../mock')
 
 // import i18n from '@/assets/locales'
@@ -48,6 +53,8 @@ const i18n = new VueI18n({
 
 import ElementUI, { Loading, Message, MessageBox } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
+import '@/assets/fonts/font.less'
 
 Vue.use(ElementUI)
 

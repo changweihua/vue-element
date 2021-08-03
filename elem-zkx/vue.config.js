@@ -4,60 +4,11 @@ const path = require('path')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const CompressionPlugin = require('compression-webpack-plugin') // Gzip
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// const ThemeColorReplacer = require('webpack-theme-color-replacer')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const WebpackVariableReplacer = require('webpack-stylesheet-variable-replacer-plugin')
-
-// const TerserPlugin = require('terser-webpack-plugin')
-// const appInfo = require('assets/app-info.json')
-// import appInfo from './assets/app'
-// const appInfo = require('assets/app.js')
-
-// const debug = process.env.NODE_ENV !== 'production'
-// const isProduction = process.env.NODE_ENV === 'production'
-
-// function getAntdSerials(color) {
-//   const lightens = new Array(9).fill().map((t, i) => {
-//     return ThemeColorReplacer.varyColor.lighten(color, i / 10)
-//   })
-//   // 此处为了简化，采用了darken。实际按color.less需求可以引入tinycolor, colorPalette变换得到颜色值
-//   const darkens = new Array(6).fill().map((t, i) => {
-//     return ThemeColorReplacer.varyColor.darken(color, i / 10)
-//   })
-//   return lightens.concat(darkens)
-// }
-
-// const cdn = {
-//   css: [],
-//   js: [
-//     'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js',
-//     'https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js',
-//     'https://unpkg.com/vue-router/dist/vue-router.js',
-//     'https://unpkg.com/axios/dist/axios.min.js'
-//   ]
-// }
-
-// const utils = {
-//   assetsPath: function(_path) {
-//     const assetsSubDirectory =
-//       process.env.NODE_ENV === 'production'
-//         ? // 生产环境下的 static 路径
-//           'static'
-//         : // 开发环境下的 static 路径
-//           'static'
-
-//     return path.posix.join(assetsSubDirectory, _path)
-//   },
-//   resolve: function(dir) {
-//     return path.join(__dirname, '..', dir)
-//   }
-// }
 
 module.exports = {
   // 基本路径
-  // baseUrl: '/apsiswux',
+  // baseUrl: '/',
   // 输出文件目录
   publicPath: process.env.VUE_APP_BASE_URL || '/', // TODO: Remember to change this to fit your need
   outputDir: `dist/${process.env.VUE_APP_BASE_URL}`,
@@ -68,8 +19,7 @@ module.exports = {
           modifyVars: {
             'primary-color': process.env.VUE_APP_PRIMARY_COLOR,
             'link-color': process.env.VUE_APP_PRIMARY_COLOR,
-            'font-family':
-              'CallingCode-Regular, JetBrainsMono, Manrope, Verdana, Avenir, Helvetica, Arial, sans-serif'
+            'font-family': 'PingFangSC, Avenir, Helvetica, Arial, sans-serif'
           },
           javascriptEnabled: true
         }
@@ -93,20 +43,6 @@ module.exports = {
       }
     }
   },
-  // configureWebpack: {
-  //   module: {
-  //     rules: [
-  //       {
-  //         test: /\.(woff2?|eot|ttf|otf)(\?.*)$/,
-  //         loader: 'url-loader',
-  //         options: {
-  //           limit: 10000,
-  //           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-  //         }
-  //       }
-  //     ]
-  //   }
-  // },
   configureWebpack: (config) => {
     // if (isProduction) {
     //   config.externals = {

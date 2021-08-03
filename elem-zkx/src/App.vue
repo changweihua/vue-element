@@ -77,9 +77,12 @@ body {
   background: #f0f2f5;
 }
 
+* {
+  font-family: PingFangSC;
+}
+
 #app {
-  font-family: CallingCode-Regular, JetBrainsMono, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: 'PingFangSC', Avenir, Helvetica, Arial, sans-serif !important;
   display: flex;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -90,24 +93,21 @@ body {
 }
 
 #app @{deep} * {
-  font-family: CallingCode-Regular, JetBrainsMono, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: 'PingFangSC', Avenir, Helvetica, Arial, sans-serif !important;
   // font-size: 14px;
   font-weight: 500;
   font-size-adjust: 0.5;
 }
 
 #app /deep/ * {
-  font-family: CallingCode-Regular, JetBrainsMono, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: 'PingFangSC', Avenir, Helvetica, Arial, sans-serif !important;
   // font-size: 14px;
   font-weight: 500;
   font-size-adjust: 0.5;
 }
 
 #app ::v-deep * {
-  font-family: CallingCode-Regular, JetBrainsMono, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: 'PingFangSC', Avenir, Helvetica, Arial, sans-serif !important;
   // font-size: 14px;
   font-weight: 500;
   font-size-adjust: 0.5;
